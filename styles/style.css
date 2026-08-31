@@ -7,7 +7,7 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:lightyellow;
+  background:rgba(246, 246, 11, 0.921);
 }
 
 /* BODY */
@@ -43,8 +43,8 @@ article {
   min-width: 20em;
   
   border-radius: 1rem;
-  background: rgb(0 239 255);
-  background: linear-gradient(0deg, rgb(0 239 255) 40%, #4e54c8 100%);
+  background: rgb(211, 255, 36);
+  background: linear-gradient(0deg, rgb(179, 219, 34) 40%, #f7fb0f 100%);
   box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
   
   transition: .25s;
@@ -64,7 +64,7 @@ header {
 h1 {
   margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
   
-  color: rgb(0 239 255); /* De tekst kleur wordt in rgb() bepaald. */
+  color: rgb(231, 99, 180); /* De tekst kleur wordt in rgb() bepaald. */
 }
 
 /* P */
@@ -88,7 +88,7 @@ button {
   
   border: none;
   border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(0 239 255);
+  background: rgb(239, 255, 17);
   
   scale:.8;
   
