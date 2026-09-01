@@ -33,18 +33,33 @@ body {
 article {
   position: relative;
   
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
+  display: grid;
+  grid-template-areas:
+    "foto   contact    skills"
+    "naam   contact    skills"
+    ;
+  gap:1em;
   
-  width: 50vw;
-  max-width: 25em;
-  min-width: 20em;
+  /* width: 50vw; */
+  /* max-width: 25em; */
+  /* min-width: 20em; */
+  padding:1em;
   
-  border-radius: 1rem;
-  background: rgb(211, 255, 36);
-  background: linear-gradient(0deg, rgb(179, 219, 34) 40%, #f7fb0f 100%);
+
+  /* Basis kaas kleur */
+  background-color: #ffcc33; 
+  
+  /* Een herhalend patroon van 160px bij 160px zorgt voor een schijnbaar willekeurige verdeling */
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  
+  /* De gaten binnen het herhalende vierkant */
+  background-image: 
+    radial-gradient(circle at 20% 20%, #e6b800 14px, transparent 15px),
+    radial-gradient(circle at 75% 15%, #e6b800 22px, transparent 23px),
+    radial-gradient(circle at 45% 60%, #e6b800 10px, transparent 11px),
+    radial-gradient(circle at 85% 75%, #e6b800 16px, transparent 17px),
+    radial-gradient(circle at 15% 80%, #e6b800 8px, transparent 9px);
   box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
   
   transition: .25s;
@@ -62,6 +77,7 @@ header {
 /* H1 */
 /* Hier krijgt het <h1> element de styling. */
 h1 {
+  grid-area: naam;
   margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
   
   color: rgb(231, 99, 180); /* De tekst kleur wordt in rgb() bepaald. */
@@ -135,6 +151,7 @@ button svg:nth-of-type(2) {
 /* IMG */
 /* Hier krijgt het <img> element de styling. */
 img {
+  grid-area: foto;
   position: relative;
   top: 2rem;
   
@@ -154,47 +171,51 @@ img {
 /* In deze DL staan 3 groepen met code skills, in CSS is de layout van de DT elementen met een Grid gepositioneerd.  */
 
 dl {
-  display: grid;
+  grid-area: skills;
+  align-self: center;
+
+  /* display:grid; */
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "html-dd   css-dd    js-dd"
-    "html-dt   css-dt    js-dt"
+    "html-dt   css-dt    js-dt" */
     ;
-  justify-items: center;
-  align-items: start;
+  /* justify-items: center; */
+  /* align-items: start; */
   
-  width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  padding: 5rem 0 3rem;
+  /* width: 100%; */
+  /* margin-top: -3rem; */
+  /* margin-bottom: 0; */
+  /* padding: 5rem 0 3rem; */
   
-  text-align: center;
-  background: rgb(255 255 255);
+  /* text-align: center; */
 
   dt {
-    margin-top: .25rem;
-    padding-top: .25rem;
+    font-weight:bold;
+    /* margin-top: .25rem; */
+    /* padding-top: .25rem; */
     
-    border-top: 1px solid rgb(0 0 0 / 0.3);
-    font-weight: bold;
+    /* border-top: 1px solid rgb(0 0 0 / 0.3); */
+    /* font-weight: bold; */
     
-    &:nth-of-type(1) {
-      grid-area: html-dt;
-    }
+    /* &:nth-of-type(1) { */
+      /* grid-area: html-dt; */
+    /* } */
     
-    &:nth-of-type(2) {
-      grid-area: css-dt;
-      translate:0 1rem;
-    }
+    /* &:nth-of-type(2) { */
+      /* grid-area: css-dt; */
+      /* translate:0 1rem; */
+    /* } */
     
-    &:nth-of-type(3) {
-      grid-area: js-dt;
-    }
+    /* &:nth-of-type(3) { */
+      /* grid-area: js-dt; */
+    /* } */
   }
 
   dd {
     margin: 0;
-    padding-left: .3rem;
+    /* padding-left: .3rem;
     
     transition: .25s .3s;
     
@@ -213,7 +234,7 @@ dl {
     
     &:nth-of-type(3) {
       grid-area: js-dt;
-    }
+    } */
   }
 }
 
@@ -227,24 +248,16 @@ p {
 /* Met de 'Child combinator selector' selecteer je alle <p> elementen die een directe  kinderen van het <article> zijn. */
 /* Dit selecteert dus niet de <p> in de <header>. */
 article > p {
+  grid-area: contact;
   width: 100%;
   margin-top: 0;
   padding: 3rem 2rem;
+
+   background: rgb(255 255 255/0.5);
+
+   width:12em;
   
-    /* Basis kaas kleur */
-  background-color: #ffcc33; 
-  
-  /* Het herhalende gatenpatroon */
-  background-size: 160px 160px;
-  background-repeat: repeat;
-  
-  /* De gaten die herhaald worden over de achtergrond */
-  background-image: 
-    radial-gradient(circle at 20% 20%, #e6b800 14px, transparent 15px),
-    radial-gradient(circle at 75% 15%, #e6b800 22px, transparent 23px),
-    radial-gradient(circle at 45% 60%, #e6b800 10px, transparent 11px),
-    radial-gradient(circle at 85% 75%, #e6b800 16px, transparent 17px),
-    radial-gradient(circle at 15% 80%, #e6b800 8px, transparent 9px);
+  /* text-align: center; */
 }
 
 /* Deze styles zijn van toepassing als op de knop wordt geklikt */
