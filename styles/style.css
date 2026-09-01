@@ -7,7 +7,7 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:rgba(246, 246, 11, 0.921);
+  background:rgba(196, 196, 154, 0.921);
 }
 
 /* BODY */
@@ -88,7 +88,7 @@ button {
   
   border: none;
   border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(239, 255, 17);
+  background: rgb(217, 228, 63);
   
   scale:.8;
   
@@ -100,6 +100,7 @@ button {
 button:hover {
   cursor: pointer;
   background: darkgoldenrod;
+   background-size: 160px 160px;
 }
 /* Met de 'Pseudo-class selector' :focus kan je bepalen hoe het element er uit moet zien als de tab toets op het toetsenbord wordt gebruikt. */
 button:focus {
@@ -156,8 +157,8 @@ dl {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
+    "html-dd   css-dd    js-dd"
+    "html-dt   css-dt    js-dt"
     ;
   justify-items: center;
   align-items: start;
@@ -200,6 +201,19 @@ dl {
     &:nth-of-type(2) {
       translate:0 1rem;
     }
+
+    &:nth-of-type(1) {
+      grid-area: html-dt;
+    }
+    
+    &:nth-of-type(2) {
+      grid-area: css-dt;
+      translate:0 1rem;
+    }
+    
+    &:nth-of-type(3) {
+      grid-area: js-dt;
+    }
   }
 }
 
@@ -217,9 +231,20 @@ article > p {
   margin-top: 0;
   padding: 3rem 2rem;
   
-  background: rgb(255 255 255 / 0.5);
-  border-radius: 0 0 1rem 1rem;
-  text-align: center;
+    /* Basis kaas kleur */
+  background-color: #ffcc33; 
+  
+  /* Het herhalende gatenpatroon */
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  
+  /* De gaten die herhaald worden over de achtergrond */
+  background-image: 
+    radial-gradient(circle at 20% 20%, #e6b800 14px, transparent 15px),
+    radial-gradient(circle at 75% 15%, #e6b800 22px, transparent 23px),
+    radial-gradient(circle at 45% 60%, #e6b800 10px, transparent 11px),
+    radial-gradient(circle at 85% 75%, #e6b800 16px, transparent 17px),
+    radial-gradient(circle at 15% 80%, #e6b800 8px, transparent 9px);
 }
 
 /* Deze styles zijn van toepassing als op de knop wordt geklikt */
