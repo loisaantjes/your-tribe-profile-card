@@ -7,7 +7,7 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:rgba(196, 196, 154, 0.921);
+   background-image: linear-gradient(to bottom, rgb(245, 155, 233), rgb(233, 233, 220));
 }
 
 /* BODY */
@@ -32,6 +32,8 @@ body {
 /* Het <article> element krijgt een kleur, en nog meer ... */
 article {
   position: relative;
+  width: 600px;
+  height: 300px;
   
   display: grid;
   grid-template-areas:
