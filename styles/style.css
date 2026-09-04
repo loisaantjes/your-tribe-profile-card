@@ -55,7 +55,7 @@ article {
   background-size: 160px 160px;
   background-repeat: repeat;
   
-  /* De gaten binnen het herhalende vierkant */
+  /* De gaten binnen het herhalende vierkant, gevonden via google-AI. */
   background-image: 
     radial-gradient(circle at 20% 20%, #e6b800 14px, transparent 15px),
     radial-gradient(circle at 75% 15%, #e6b800 22px, transparent 23px),
